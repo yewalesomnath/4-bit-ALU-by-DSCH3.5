@@ -1,0 +1,77 @@
+USER SYMBOL by DSCH 3.5
+DATE 10-11-2025 19:00:23
+SYM  #4bitsubstractor
+BB(0,0,40,100)
+TITLE 10 -7  #4bitsubstractor
+MODEL 6000
+REC(5,5,30,90)
+PIN(0,60,0.00,0.00)a3
+PIN(0,30,0.00,0.00)b2
+PIN(0,20,0.00,0.00)b3
+PIN(0,40,0.00,0.00)b1
+PIN(0,10,0.00,0.00)c0
+PIN(0,90,0.00,0.00)a0
+PIN(0,70,0.00,0.00)a2
+PIN(0,80,0.00,0.00)a1
+PIN(0,50,0.00,0.00)b0
+PIN(40,10,2.00,1.00)d4
+PIN(40,30,2.00,1.00)d2
+PIN(40,40,2.00,1.00)d1
+PIN(40,50,2.00,1.00)d0
+PIN(40,20,2.00,1.00)d3
+LIG(0,60,5,60)
+LIG(0,30,5,30)
+LIG(0,20,5,20)
+LIG(0,40,5,40)
+LIG(0,10,5,10)
+LIG(0,90,5,90)
+LIG(0,70,5,70)
+LIG(0,80,5,80)
+LIG(0,50,5,50)
+LIG(35,10,40,10)
+LIG(35,30,40,30)
+LIG(35,40,40,40)
+LIG(35,50,40,50)
+LIG(35,20,40,20)
+LIG(5,5,5,95)
+LIG(5,5,35,5)
+LIG(35,5,35,95)
+LIG(35,95,5,95)
+VLG module 4bitsubstractor( a3,b2,b3,b1,c0,a0,a2,a1,
+VLG  b0,d4,d2,d1,d0,d3);
+VLG  input a3,b2,b3,b1,c0,a0,a2,a1;
+VLG  input b0;
+VLG  output d4,d2,d1,d0,d3;
+VLG  wire w11,w12,w14,w19,w20,w21,w22,w23;
+VLG  wire w24,w25,w26,w27,w28,w29,w30,w31;
+VLG  wire w32,w33,w34,w35,w36,w37,w38;
+VLG  xor #(2) xor2_1_1(w19,b3,a3);
+VLG  xor #(1) xor2_2_2(d3,w19,w11);
+VLG  not #(1) inv_3_3(w20,b3);
+VLG  and #(1) and2_4_4(w21,a3,w20);
+VLG  or #(1) or2_5_5(d4,w22,w21);
+VLG  and #(1) and2_6_6(w22,w11,w23);
+VLG  not #(1) inv_7_7(w23,w19);
+VLG  xor #(2) xor2_1_8(w24,b2,a2);
+VLG  xor #(1) xor2_2_9(d2,w24,w12);
+VLG  not #(1) inv_3_10(w25,b2);
+VLG  and #(1) and2_4_11(w26,a2,w25);
+VLG  or #(2) or2_5_12(w11,w27,w26);
+VLG  and #(1) and2_6_13(w27,w12,w28);
+VLG  not #(1) inv_7_14(w28,w24);
+VLG  xor #(2) xor2_1_15(w29,b1,a1);
+VLG  xor #(1) xor2_2_16(d1,w29,w14);
+VLG  not #(1) inv_3_17(w30,b1);
+VLG  and #(1) and2_4_18(w31,a1,w30);
+VLG  or #(2) or2_5_19(w12,w32,w31);
+VLG  and #(1) and2_6_20(w32,w14,w33);
+VLG  not #(1) inv_7_21(w33,w29);
+VLG  xor #(2) xor2_1_22(w34,b0,a0);
+VLG  xor #(1) xor2_2_23(d0,w34,c0);
+VLG  not #(1) inv_3_24(w35,b0);
+VLG  and #(1) and2_4_25(w36,a0,w35);
+VLG  or #(2) or2_5_26(w14,w37,w36);
+VLG  and #(1) and2_6_27(w37,c0,w38);
+VLG  not #(1) inv_7_28(w38,w34);
+VLG endmodule
+FSYM

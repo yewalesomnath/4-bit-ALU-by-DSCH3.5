@@ -1,0 +1,62 @@
+USER SYMBOL by DSCH 3.5
+DATE 13-11-2025 15:12:50
+SYM  #4bitnand
+BB(0,0,40,90)
+TITLE 10 -7  #4bitnand
+MODEL 6000
+REC(5,5,30,80)
+PIN(0,80,0.00,0.00)b3
+PIN(0,40,0.00,0.00)a3
+PIN(0,70,0.00,0.00)b2
+PIN(0,60,0.00,0.00)b1
+PIN(0,30,0.00,0.00)a2
+PIN(0,20,0.00,0.00)a1
+PIN(0,50,0.00,0.00)b0
+PIN(0,10,0.00,0.00)a0
+PIN(40,40,2.00,1.00)na3
+PIN(40,30,2.00,1.00)na2
+PIN(40,10,2.00,1.00)na0
+PIN(40,20,2.00,1.00)na1
+LIG(0,80,5,80)
+LIG(0,40,5,40)
+LIG(0,70,5,70)
+LIG(0,60,5,60)
+LIG(0,30,5,30)
+LIG(0,20,5,20)
+LIG(0,50,5,50)
+LIG(0,10,5,10)
+LIG(35,40,40,40)
+LIG(35,30,40,30)
+LIG(35,10,40,10)
+LIG(35,20,40,20)
+LIG(5,5,5,85)
+LIG(5,5,35,5)
+LIG(35,5,35,85)
+LIG(35,85,5,85)
+VLG module 4bitnand( b3,a3,b2,b1,a2,a1,b0,a0,
+VLG  na3,na2,na0,na1);
+VLG  input b3,a3,b2,b1,a2,a1,b0,a0;
+VLG  output na3,na2,na0,na1;
+VLG  wire w14,w15,w16,w17,w18,w19,w20,w21;
+VLG  nand #(2) nandblock_1(na0,b0,a0);
+VLG  nand #(2) nandblock_2(na1,b1,a1);
+VLG  nand #(2) nandblock_3(na2,b2,a2);
+VLG  nand #(2) nandblock_4(na3,b3,a3);
+VLG  not #(1) inv_1_5(w14,b0);
+VLG  nmos #(1) nmos_2_6(na0,w14,a0); //  
+VLG  nmos #(1) nmos_3_7(na0,vdd,w15); //  
+VLG  not #(1) inv_4_8(w15,a0);
+VLG  not #(1) inv_1_9(w16,b1);
+VLG  nmos #(1) nmos_2_10(na1,w16,a1); //  
+VLG  nmos #(1) nmos_3_11(na1,vdd,w17); //  
+VLG  not #(1) inv_4_12(w17,a1);
+VLG  not #(1) inv_1_13(w18,b2);
+VLG  nmos #(1) nmos_2_14(na2,w18,a2); //  
+VLG  nmos #(1) nmos_3_15(na2,vdd,w19); //  
+VLG  not #(1) inv_4_16(w19,a2);
+VLG  not #(1) inv_1_17(w20,b3);
+VLG  nmos #(1) nmos_2_18(na3,w20,a3); //  
+VLG  nmos #(1) nmos_3_19(na3,vdd,w21); //  
+VLG  not #(1) inv_4_20(w21,a3);
+VLG endmodule
+FSYM
